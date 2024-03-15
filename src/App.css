@@ -40,3 +40,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scrollImagesContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrollImages {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
