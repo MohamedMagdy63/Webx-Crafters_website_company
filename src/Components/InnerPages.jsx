@@ -9,7 +9,7 @@ const InnerPages = () => {
   return (
     // container
     <div className="h-[50%]">
-      <h1 className="text-5xl m-4 sm:m-10 lg:m-20">Beautiful Inner Pages</h1>
+      <h1 className="lg:text-5xl text-3xl mt-4 mb-6 font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Beautiful Inner Pages</h1>
       {/* scrolling box */}
       <div className="overflow-hidden relative scrollImagesContainer">
         <div className="scrollImages flex overflow-x-auto">

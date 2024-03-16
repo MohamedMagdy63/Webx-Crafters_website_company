@@ -16,7 +16,7 @@ const Demos = () => {
 
   return (
     <div className="container mx-auto my-10 p-0">
-      <h1 className="text-5xl mt-4 mb-16">Explore Our Projects</h1>
+      <h1 className="lg:text-5xl text-3xl mt-4 mb-6 font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Explore Our Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {demoImages.map((item, index) => (
           <div key={index} className="rounded-lg overflow-hidden shadow-md h-full">
