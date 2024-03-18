@@ -35,7 +35,7 @@ const SlideShow = () => {
         <video
           ref={videoRef}
           className="object-cover w-full h-full transition-opacity duration-1000"
-          src={Test}
+          src='https://firebasestorage.googleapis.com/v0/b/webx-9eb1f.appspot.com/o/0319.mp4?alt=media&token=251e8553-57bd-4861-ada1-8c7f7ff2fc52'
           alt={`Video ${currentVideoIndex + 1}`}
           muted
           onEnded={handleVideoEnd}

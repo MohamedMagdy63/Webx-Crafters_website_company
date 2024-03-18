@@ -21,7 +21,7 @@ const Clients = [
 const OurClients = () => {
   return (
     <div className="h-full w-full my-10">
-      <h1 className="text-4xl text-gray-600 text-center mb-5">Our Clients</h1>
+      <h1 className="lg:text-5xl text-3xl mt-4 mb-6 font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Our Clients</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Clients.map((item, index) => (
           <div key={index} className="p-4 border rounded-lg">
