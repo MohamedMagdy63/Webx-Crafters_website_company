@@ -9,15 +9,12 @@ const Footer = () => {
     <footer className="bg-gray-700 py-5">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-between items-center">
-          {/* Logo and Site Name */}
           <Link to='/' className="text-white">
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
-            W
-          </span>
-          ebX-Crafters
-        </Link>
-
-          {/* Navigation Links */}
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
+              W
+            </span>
+            ebX-Crafters
+          </Link>
           <ul className='flex flex-col lg:flex-row lg:space-x-4 text-white mt-4 lg:mt-0'>
             <li>
               <Link to='/about' className="text-lg font-semibold hover:text-green-200">About</Link>
