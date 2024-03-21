@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Test from '../Videos/SlideShow/pexels-cottonbro-7170776 (2160p).mp4';
+import Test from '../Videos/SlideShow/0319(1).mp4';
 
 const captions = [
   'We offer customized solutions to every customer',
