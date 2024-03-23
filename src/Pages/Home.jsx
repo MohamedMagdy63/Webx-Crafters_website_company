@@ -2,7 +2,6 @@
 import AnalysisBox from '../Components/AnalysisBox';
 import Demos from '../Components/Demos';
 import OurClients from '../Components/OurClients';
-import InnerPages from '../Components/InnerPages';
 import MainSlide from '../Components/MainSlide';
 import Navbar from '../Components/Navbar';
 import SlideShow from '../Components/SlideShow';
@@ -22,7 +21,6 @@ function Home() {
       <SlideShow/>
       <AnalysisBox/>
       <Demos/>
-      <InnerPages/>
       <h1 className="text-3xl font-bold mt-6 text-center bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Our Services</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {serviceData.map((service, index) => (

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import instagram from '../Images/Social-media/instagram.png';
 import tiktok from '../Images/Social-media/tik-tok.png';
-import gmail from '../Images/Social-media/gmail.png';
+import email from '../Images/Social-media/email.png';
 
 const Footer = () => {
   return (
@@ -42,7 +42,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="mailto:webxcrafters@gmail.com" target="_blank" rel="noopener noreferrer">
-                <img className="w-10 h-10" src={gmail} alt="Gmail" />
+                <img className="w-10 h-10" src={email} alt="Gmail" />
               </a>
             </li>
           </ul>

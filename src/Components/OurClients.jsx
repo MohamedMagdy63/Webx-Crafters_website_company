@@ -12,7 +12,7 @@ const Clients = [
   },
   {
     img: Relu,
-    desc: 'Frames Gallery',
+    desc: 'ReLU art is a Frames Gallery',
     details: "Owner: Khaled and Mahmoud",
     account: 'https://www.instagram.com/reluart.eg/?hl=ar'
   },

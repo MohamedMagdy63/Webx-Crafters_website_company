@@ -13,7 +13,11 @@ module.exports = {
     'src/Pages/Services.jsx',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor:{
+        'click':'rgb(255 255 255 / 60%)'
+      }
+    },
   },
   plugins: [],
 }

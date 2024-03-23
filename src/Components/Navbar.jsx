@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import instagram from '../Images/Social-media/instagram.png';
 import tiktok from '../Images/Social-media/tik-tok.png';
-import gmail from '../Images/Social-media/gmail.png';
+import email from '../Images/Social-media/email.png';
 
 
 const Navbar = () => {
@@ -18,9 +18,9 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className='hidden lg:flex flex-row space-x-4 text-gray-500'>
-          <Link to='/about' className="text-xl font-semibold px-3 hover:text-gray-800">About</Link>
-          <Link to='/services' className="text-xl font-semibold px-3 hover:text-gray-800">Services</Link>
-          <Link to='/projects' className="text-xl font-semibold px-3 hover:text-gray-800">Projects</Link>
+          <Link to='/about' className="text-2xl font-bold px-3 hover:text-gray-800">About</Link>
+          <Link to='/services' className="text-2xl font-bold px-3 hover:text-gray-800">Services</Link>
+          <Link to='/projects' className="text-2xl font-bold px-3 hover:text-gray-800">Projects</Link>
         </ul>
 
         {/* Social Media Icons */}
@@ -33,7 +33,7 @@ const Navbar = () => {
           </a>
           {/* Uncomment the following section if you want to include Gmail icon */}
           <a href="mailto:webxcrafters@gmail.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 px-1">
-            <img src={gmail} alt="gmail" />
+            <img src={email} alt="gmail" />
           </a>
         </ul>
       </div>

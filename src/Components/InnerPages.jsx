@@ -1,9 +1,9 @@
 import React from "react";
-import Scrub from "../Images/Pages/scrub-shopping.png";
-import Gosto from "../Images/Pages/localhost_3001_.png";
-import Relu from "../Images/Pages/localhost_3001_ (1).png";
-
-const Pages = [Gosto, Scrub, Relu];
+import relu from '../Images/Demos/relu-client.vercel.app_.png';
+import H_Scrub from "../Images/Demos/scrub-shopping.png";
+import Gosto from "../Images/Demos/Gosto.png";
+import Auction from "../Images/Demos/Auction.png";
+const Pages = [ relu, H_Scrub ,Gosto ,Auction];
 
 const InnerPages = () => {
   return (
