@@ -15,15 +15,15 @@ const Footer = () => {
             </span>
             ebX-Crafters
           </Link>
-          <ul className='flex flex-col lg:flex-row lg:space-x-4 text-white mt-4 lg:mt-0'>
+          <ul className='flex flex-col lg:flex-row lg:space-x-4 text-white mt-4 lg:mt-0 font-bold'>
             <li>
-              <Link to='/about' className="text-lg font-semibold hover:text-green-200">About</Link>
+              <Link to='/about' className="text-xl hover:text-green-200">About</Link>
             </li>
             <li>
-              <Link to='/services' className="text-lg font-semibold hover:text-green-200">Services</Link>
+              <Link to='/services' className="text-xl hover:text-green-200">Services</Link>
             </li>
             <li>
-              <Link to='/projects' className="text-lg font-semibold hover:text-green-200">Projects</Link>
+              <Link to='/projects' className="text-xl hover:text-green-200">Projects</Link>
             </li>
             {/* Add more links here if needed */}
           </ul>
