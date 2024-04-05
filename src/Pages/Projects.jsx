@@ -10,10 +10,9 @@ const Projects = () => {
     }, []);
     return (
         <>
-            <Navbar />
             <Demos/>
-            <InnerPages/>
-            <Footer />
+            {/* <InnerPages/> */}
+            {/* <Footer /> */}
         </>
     );
 };

@@ -20,11 +20,12 @@ function Home() {
       <MainSlide/>
       <SlideShow/>
       <AnalysisBox/>
-      <Demos/>
-      <h1 className="text-3xl font-bold mt-6 text-center bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Our Services</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* <Demos/> */}
+      <h1 className="text-3xl font-bold mt-6 text-center bg-gradient-to-r z-50 
+      from-blue-500 to-green-500 bg-clip-text text-transparent">Our Services</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 z-50">
         {serviceData.map((service, index) => (
-            <div className="relative bg-white overflow-hidden rounded-lg shadow-lg m-10 border border-gray-300 transform hover:scale-105 transition duration-300">
+            <div key={index} className="relative bg-white overflow-hidden rounded-lg shadow-lg m-10 border border-gray-300 transform hover:scale-105 transition duration-300">
             <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-transparent opacity-50"></div>
                 <img src={service.image} alt={service.title} className="w-full h-56 object-cover object-center rounded-t-lg" />
