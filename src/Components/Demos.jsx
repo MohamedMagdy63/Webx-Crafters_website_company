@@ -74,29 +74,29 @@ const Demos = () => {
             // activeBgImagesGsap[index].style.opacity = opacity
 
             if(currentZ < 20){
-              gsap.to(activeSlideImagesGsap[index], 0.5, {
+              gsap.to(activeSlideImagesGsap[index], 1.5, {
                 opacity: 1,
                 ease: "power3.out"
               })
-              gsap.to(activeDivGsap[index], 0.5, {
+              gsap.to(activeDivGsap[index], 1.5, {
                 opacity: 1,
                 ease: "power3.out"
               })
               gsap.to(activeBgImagesGsap[index], 1.5, {
-                opacity: 0,
+                opacity: 1,
                 ease: "power3.out"
               })
             }else{
-              gsap.to(activeSlideImagesGsap[index], 0.5, {
+              gsap.to(activeSlideImagesGsap[index], 1.5, {
                 opacity: 0,
                 ease: "power3.out"
               })
-              gsap.to(activeDivGsap[index], 0.5, {
+              gsap.to(activeDivGsap[index], 1.5, {
                 opacity: 0,
                 ease: "power3.out"
               })
-              gsap.to(activeBgImagesGsap[index], 1.5, {
-                opacity: 1,
+              gsap.to(activeBgImagesGsap[index+1], 1.5, {
+                opacity: 0,
                 ease: "power3.out"
               })
             }
@@ -110,10 +110,10 @@ const Demos = () => {
     <div ref={section} className="w-full z-[-1]">
       <div ref={container} className="relative w-full h-[2000vh] mt-8 z-20">
         <Navbar />
-        <h1 className="lg:text-5xl text-3xl mt-4 mb-6 font-bold bg-gradient-to-r 
-        from-blue-500 to-green-500 bg-clip-text text-transparent">Explore Our Projects</h1>
-        <div className={`fixed top-0 left-0 flex flex-col-reverse w-full h-full overflow-hidden bg-black opacity-35 z-[-1]`}>
-          {
+        {/* <h1 className="lg:text-5xl text-3xl mt-4 mb-6 font-bold bg-gradient-to-r 
+        from-blue-500 to-green-500 bg-clip-text text-transparent">Explore Our Projects</h1> */}
+        <div className={`fixed top-0 left-0 flex flex-col-reverse w-full h-full overflow-hidden bg-black z-[-1]`}>
+          {/* {
             DemoImages.map((item, index) => (
               <img  src={item.project} 
               key={index} alt="" 
@@ -121,20 +121,22 @@ const Demos = () => {
               className={`object-cover w-full h-full blur-[10px] absolute scale-[1.125] ${ index === 0 ? 'opacity-100' : 'opacity-0' }`} />
             )) 
           }
-          
+           */}
+           <img src="space (1).jpg" alt=""
+           className={`object-cover w-full h-full absolute blur-[5px]`} />
         </div>
         <div
         className={`fixed top-10 left-0 w-[100vw] h-[100vh] transform-style-3d perspective-800`}>
           {DemoImages.map((item, index) => (
-            <div ref={sildes} key={index} className={`absolute w-[600px] h-[600px] overflow-hidden 
-              ${index % 2 === 0 ? 'top-[50%] left-[70%]' : 'top-[50%] left-[30%]' } ${ index === 0 ? 'opacity-100' : index === 1 ? 'opacity-50' : 'opacity-0' }`}
+            <div ref={sildes} key={index} className={`absolute w-fit h-fit overflow-hidden 
+              ${index % 2 === 0 ? 'top-[50%] left-[70%]' : 'top-[50%] left-[20%]' } ${ index === 0 ? 'opacity-100' : index === 1 ? 'opacity-50' : 'opacity-0' }`}
               style={{transform:`translateX(-50%) translateY(-50%) translateZ(-${index * 2500}px)`}}>
               <div ref={titleDiv} className="flex justify-start py-3">
                   <p className='font-bold text-xl text-black' >{item.desc}</p>
               </div>
               <img
                 ref={activeSlideImages}
-                className='h-full w-full object-cover'
+                className='h-full w-full object-contain'
                 src={item.project}
                 alt=""
               />

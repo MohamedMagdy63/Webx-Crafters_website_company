@@ -6,7 +6,7 @@ import Loukma from "../Images/Demos/Loukma.png";
 import Coffe from "../Images/Demos/Coffe.png";
 import Portfolio from "../Images/Demos/Portfolio.png";
 import cartemplate from "../Images/Demos/car-template.png";
-import niketemplete from "../Images/Demos/nike-templete.png";
+import niketemplete from "../Images/Demos/nike-templete.jpg";
 
 const DemoImages = [
     {
