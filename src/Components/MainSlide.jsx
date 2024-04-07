@@ -36,7 +36,7 @@ const MainSlide = () => {
       
       {/* Greeting text */}
       <div className='relative w-full flex justify-center items-center'>
-        <h1 className="text-white text-2xl lg:text-6xl w-full lg:w-2/3 h-80 font-bold pt-10 pt-40 text-center animate-fade-in">
+        <h1 className="text-white text-2xl lg:text-6xl w-full lg:w-2/3 h-80 font-bold pt-40 text-center animate-fade-in">
           {animatedText}
         </h1>
       </div>

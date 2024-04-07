@@ -1,7 +1,7 @@
 import React from "react";
 import relu from '../Images/Demos/relu-client.vercel.app_.png';
-import H_Scrub from "../Images/Demos/scrub-shopping.png";
-import Gosto from "../Images/Demos/Gosto.png";
+import H_Scrub from "../Images/Demos/sa3y_copy.jpg";
+import Gosto from "../Images/Demos/Gosto.jpg";
 import Auction from "../Images/Demos/Auction.png";
 const Pages = [ relu, H_Scrub ,Gosto ,Auction];
 
