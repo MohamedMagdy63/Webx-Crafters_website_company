@@ -41,7 +41,7 @@ html {
 
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 1.3rem;
+  width: 1rem;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -71,12 +71,6 @@ body {
   margin: 0 auto;
 }
 
-/* Heading Styles */
-.heading {
-  padding: 1rem 0;
-  font-size: 3.5rem;
-  text-align: center;
-}
 
 /* Swiper Container Styles */
 .swiper_container {
