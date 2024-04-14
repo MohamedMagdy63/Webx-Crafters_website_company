@@ -14,55 +14,55 @@ const DemoImages = [
       project:H_Scrub,
       link:'https://scrub-shopping.vercel.app/',
       desc:'E-commerce Website',
-      text:'Click on me',
+      text:'Visit Now',
       
     },
     {
       project:relu,
       link:'https://relu-client.vercel.app/',
       desc:'E-commerce Website',
-      text:'Click on me',
+      text:'Visit Now',
       
     },
     {
       project:Gosto,
       desc:'E-commerce Website',
-      text:'Link not available',
+      // text:'not available',
       
     },
     {
       project:Auction,
       desc:'E-commerce Website',
-      text:'Link not available'
+      // text:'not available'
     },
     {
       project:Cyper,
       desc:'Management system',
-      text:'Link not available',
+      // text:'not available',
     },
     {
       project:Loukma,
       desc:'Cashier system',
-      text:'Link not available',
+      // text:'not available',
     },
     // {
     //   project:Portfolio,
     //   link:'https://magdy.vercel.app/',
     //   desc:'Portfolio',
-    //   text:'Click on me',
+    //   text:'Visit Now',
     // },
     {
       project:cartemplate,
       link:'https://car-template-rho.vercel.app/',
       desc:'E-commerce Website',
-      text:'Click on me',
+      text:'Visit Now',
       
     },
     {
       project:niketemplete,
       link:'https://nike-templete.vercel.app/',
       desc:'E-commerce Website',
-      text:'Click on me',
+      text:'Visit Now',
     },
     
    ];

@@ -9,8 +9,8 @@ module.exports = {
     'src/Components/InnerPages.jsx',
     'src/Components/OurClients.jsx',
     'src/Components/Footer.jsx',
+    'src/Components/Services.jsx',
     'src/Pages/About.jsx',
-    'src/Pages/Services.jsx',
   ],
   theme: {
     extend: {

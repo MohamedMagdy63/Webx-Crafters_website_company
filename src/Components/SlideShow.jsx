@@ -29,8 +29,8 @@ const SlideShow = () => {
   };
 
   return (
-    <div className="relative flex justify-center h-screen">
-      <div className="w-full h-full overflow-hidden">
+    <div className="relative">
+      <div className="w-[250px] h-[250px] overflow-hidden rounded-full ">
         {/* Video with Fade Transition and Responsive Design */}
         <video
           ref={videoRef}
@@ -41,11 +41,11 @@ const SlideShow = () => {
           onEnded={handleVideoEnd}
           onCanPlayThrough={handleCanPlayThrough}
         />
-        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-75">
+        {/* <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-75">
           <h2 className="text-lg text-white font-semibold">
           {captions[currentVideoIndex]}
         </h2>
-        </div>
+        </div> */}
       </div>
     </div>
   );
