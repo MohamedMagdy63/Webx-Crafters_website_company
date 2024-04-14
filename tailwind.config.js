@@ -16,11 +16,20 @@ module.exports = {
     extend: {
       backgroundColor:{
         'click':'rgb(255 255 255 / 60%)'
+      },
+      colors:{
+        "mainColor": "#3B82F6",
+        "subMainColor": "#10DC15"
+      },
+      fontFamily:{
+        mainFont: ["Bitter", "serif"]
       }
     },
   },
   plugins: [
-    require("@xpd/tailwind-3dtransforms")
+    require("@xpd/tailwind-3dtransforms"),
+    require("tailwindcss-text-fill"),
+    require("tailwindcss-text-fill-stroke"),
   ],
 }
 
