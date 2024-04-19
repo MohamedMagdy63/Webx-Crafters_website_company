@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Test from '../Videos/SlideShow/SlideShow.mp4';
+import Test from '../Videos/SlideShow/Astronout.mp4';
 
 const captions = [
   'We offer customized solutions to every customer',
@@ -10,7 +10,6 @@ const captions = [
 const SlideShow = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef(null);
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % captions.length);
@@ -18,19 +17,16 @@ const SlideShow = () => {
 
     return () => clearInterval(intervalId);
   }, []);
-
   const handleVideoEnd = () => {
     videoRef.current.currentTime = 0;
     videoRef.current.play();
   };
-
   const handleCanPlayThrough = () => {
     videoRef.current.play();
   };
-
   return (
-    <div className="relative">
-      <div className="w-[250px] h-[250px] overflow-hidden rounded-full ">
+    <div className="relative p-5">
+      <div className="w-full  h-[600px] overflow-hidden rounded-full relative">
         {/* Video with Fade Transition and Responsive Design */}
         <video
           ref={videoRef}
@@ -41,11 +37,11 @@ const SlideShow = () => {
           onEnded={handleVideoEnd}
           onCanPlayThrough={handleCanPlayThrough}
         />
-        {/* <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-75">
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
           <h2 className="text-lg text-white font-semibold">
-          {captions[currentVideoIndex]}
-        </h2>
-        </div> */}
+            {captions[currentVideoIndex]}
+          </h2>
+        </div>
       </div>
     </div>
   );
