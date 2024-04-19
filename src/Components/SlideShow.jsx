@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import Test from '../Videos/SlideShow/Astronout.mp4';
 
 const captions = [
-  'We offer customized solutions to every customer',
-  'Imagination and creativity blended perfectly',
-  'Our designs are simple and original'
+  { text: 'We offer customized solutions to every customer' },
+  { text: 'Imagination and creativity blended perfectly' },
+  { text: 'Our designs are simple and original' }
 ];
 
 const SlideShow = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef(null);
+  const controls = useAnimation();
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % captions.length);
@@ -17,17 +20,29 @@ const SlideShow = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+
   const handleVideoEnd = () => {
     videoRef.current.currentTime = 0;
     videoRef.current.play();
   };
+
   const handleCanPlayThrough = () => {
     videoRef.current.play();
   };
+
+  useEffect(() => {
+    controls.start({
+      scale: [0.95, 1.05, 1], // Keyframes for scale animation
+      transition: { duration: 2, ease: 'easeInOut' }, // Animation duration and easing
+    });
+  }, [currentVideoIndex, controls]);
+
   return (
     <div className="relative p-5">
-      <div className="w-full  h-[600px] overflow-hidden rounded-full relative">
-        {/* Video with Fade Transition and Responsive Design */}
+      <motion.div
+        className="w-[90%] h-[700px] ml-[5%] mt-5 overflow-hidden rounded-full relative"
+        animate={controls}
+      >
         <video
           ref={videoRef}
           className="object-cover w-full h-full transition-opacity duration-1000"
@@ -37,12 +52,26 @@ const SlideShow = () => {
           onEnded={handleVideoEnd}
           onCanPlayThrough={handleCanPlayThrough}
         />
-        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-          <h2 className="text-lg text-white font-semibold">
-            {captions[currentVideoIndex]}
-          </h2>
-        </div>
-      </div>
+        <motion.div
+          className="absolute bg-black top-0 left-0 right-0 bottom-0 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.6 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h2
+            className="text-xl font-semibold text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1 }}
+          >
+            {captions[currentVideoIndex].text}
+          </motion.h2>
+        </motion.div>
+        <div className="absolute inset-0 flex items-center justify-center">
+      <div className="video-animation"></div>
+    </div>
+      </motion.div>
     </div>
   );
 };
