@@ -27,7 +27,7 @@ const AnalysisBox = () => {
   return (
     <div className="flex justify-center p-8 sm:p-20">
       <motion.ul
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 bg-gradient-to-b from-blue-300 via-blue-500 to-green-300 rounded-lg p-8 shadow-lg"
+        className="grid grid-cols-1 max-sm:grid-cols-2 lg:grid-cols-4 max-sm:gap-4 gap-8 bg-gradient-to-b from-blue-300 via-blue-500 to-green-300 rounded-lg max-sm:p-4 p-8 shadow-lg"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
