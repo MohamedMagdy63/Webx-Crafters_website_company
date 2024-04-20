@@ -40,7 +40,7 @@ const SlideShow = () => {
   return (
     <div className="relative p-5">
       <motion.div
-        className="w-[90%] h-[700px] ml-[5%] mt-5 overflow-hidden rounded-full relative"
+        className="w-[90%] h-[700px] max-sm:w-[100%] max-sm:h-[450px] lg:ml-[5%] mt-5 overflow-hidden rounded-full relative"
         animate={controls}
       >
         <video
@@ -69,8 +69,8 @@ const SlideShow = () => {
           </motion.h2>
         </motion.div>
         <div className="absolute inset-0 flex items-center justify-center">
-      <div className="video-animation"></div>
-    </div>
+          <div className="video-animation"></div>
+        </div>
       </motion.div>
     </div>
   );

@@ -8,7 +8,6 @@ const Services = () => {
       const phoneNumber = '01117125043'; // Replace this with the actual phone number
       const message = 'Hello, I want to chat with you!'; // Your predefined message
       const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-      
       // Redirect to WhatsApp link
       window.location.href = whatsappLink;
     };
