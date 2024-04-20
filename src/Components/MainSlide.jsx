@@ -223,9 +223,9 @@ const MainSlide = () => {
 
       <div ref={leftSection} className='lg:w-[60%] lg:h-screen lg:flex lg:justify-center lg:items-center lg:z-10
       sm:w-[90%] sm:h-screen sm:flex sm:justify-start sm:items-start sm:z-10 sm:pt-10
-      max-sm:w-full max-sm:h-[60vh] max-sm:flex max-sm:justify-center max-sm:items-center max-sm:z-10 max-sm:pt-10'>
+      max-sm:w-full max-sm:h-[60vh] max-sm:flex max-sm:justify-center max-sm:items-center max-sm:z-10 '>
 
-        <div ref={textContainer} className='w-fit h-fit flex flex-col lg:justify-center lg:items-start lg:pl-[100px] sm:pl-0 sm:justify-start sm:items-start max-sm:pl-0 max-sm:justify-start max-sm:items-start'>
+        <div ref={textContainer} className='w-fit h-fit flex flex-col lg:justify-center lg:items-start lg:pl-[100px] sm:pl-0 sm:justify-start sm:items-start max-sm:pl-0 max-sm:justify-start max-sm:items-start '>
           <div ref={designDiv} className='w-full text-start h-1 overflow-hidden'>
             <p ref={designEle} className='lg:text-7xl sm:text-5xl max-sm:text-5xl font-mainFont'>Design, <span ref={test} className='font-bold text-mainColor'>Develop</span></p>
           </div>
@@ -242,26 +242,26 @@ const MainSlide = () => {
           <img 
           src="landingPage.png" 
           alt=""
-          className='object-cover lg:w-full lg:h-[90%] sm:w-[80%] max-sm:w-full' />
+          className='object-cover lg:w-full lg:h-[90%] sm:w-[80%] max-sm:w-full max-sm:h-[350px]' />
         </div>
       </div>
 
       <div ref={container} className='absolute overflow-hidden bottom-0 w-full h-[100px] p-0  flex justify-evenly items-center'>
         <div ref={subdiv} className='flex justify-center items-center gap-4 w-[500px]'>
           <img src={Layout} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-14 max-sm:h-14  p-1' alt="" />
-          <p className="text-sm lg:text-2xl max-sm:lg:text-xl text-center">
+          <p className="text-sm lg:text-2xl  text-center max-sm:hidden">
             Unique Layout design
           </p>
         </div>
         <div ref={subdiv} className='flex justify-center items-center gap-4 w-[500px]'>
           <img src={Responsive} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-14 max-sm:h-14 p-1' alt="" />
-          <p className="text-sm lg:text-2xl text-center">
+          <p className="text-sm lg:text-2xl  text-center max-sm:hidden">
             Beautiful all Device Responsive
           </p>
         </div>
         <div ref={subdiv} className='flex justify-center items-center gap-4 w-[500px]'>
           <img src={TechnicalSupport} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-14 max-sm:h-14 p-1' alt="" />
-          <p className="text-sm lg:text-2xl text-center">
+          <p className="text-sm lg:text-2xl text-center max-sm:hidden">
             24/7 Hours Dedicated Support
           </p>
         </div>

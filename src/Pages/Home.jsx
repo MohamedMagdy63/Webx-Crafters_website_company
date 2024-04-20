@@ -7,7 +7,6 @@ import Navbar from '../Components/Navbar';
 import SlideShow from '../Components/SlideShow';
 import { useEffect } from 'react';
 import Footer from '../Components/Footer';
-import serviceData from '../Data/Services';
 import Services from '../Components/Services';
 function Home() {
   useEffect(()=>{
@@ -19,8 +18,6 @@ function Home() {
       <MainSlide/>
       <SlideShow/>
       <AnalysisBox/>
-       <h1 className="text-3xl font-bold mt-6 text-center bg-gradient-to-r z-50 
-      from-blue-500 to-green-500 bg-clip-text text-transparent">Explore Our Project</h1>
       <Demos/>
       <Services/>
       <OurClients/>

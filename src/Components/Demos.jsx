@@ -10,7 +10,6 @@ SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
 const Demos = () => {
   return (
     <div className="page">
-     
       <div className="container ">
         <Swiper
           effect={'coverflow'}
@@ -32,7 +31,7 @@ const Demos = () => {
             
             <SwiperSlide key={index}>
               <a href={item.link} target='_blank' rel='noreferrer'>
-                <img src={item.project} className={`bg-[#92C7CF] swiper-image`} alt="slide_image" />
+                <img src={item.project} className={`bg-[#2e8e9d] swiper-image`} alt="slide_image" />
                 <p className='absolute top-[80%] left-[40%] font-mono text-xl text-white hover:scale-[1.2] hover:text-gray-700'>{item.text}</p>
               </a>
               <p className='text-xl font-mono'>{item.desc}</p>

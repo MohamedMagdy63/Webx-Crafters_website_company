@@ -1,4 +1,4 @@
-const serviceData = [
+const LimitedData = [
     {
         title: 'Limited',
         forWho:'Small Buisness or personal brand',
@@ -7,33 +7,35 @@ const serviceData = [
         manage:'Manage and update viewing data ',
         promotions:'promotions applied',
         logo:'Desing Logo',
-        domain:'Special Domain name with .com.co',
+        domain:'Special Domain Name With .com.co',
         ssl:'SSL HTTPS',
         redesign:'5 design revisions',
         colors:'colors and sizes',
         ram:'1 GB RAM',
         storage:'50 GB SSD Storage',
-        details: 'Immerse your audience with engaging animations and responsive design, compatible across tablets, personal computers, and mobile devices.',
         price: '3400',
         frequency: 'EGP'
     },
     {
         title: 'Ultra',
         forWho:'For big or intermediate companies',
-        pagesNumber:'1 Page',
+        pagesNumber:'e-commerce website',
         design:'custom design',
         manage:'Manage and update viewing data ',
         promotions:'promotions applied',
         logo:'Desing Logo',
-        domain:'Special Domain name with .com.co',
-        ssl:'SSL HTTPS',
-        redesign:'5 design revisions',
+        domain:'Special Domain name with .com',
+        ssl:'SSL HTTPS , IPV4 & IPV6 Support',
+        redesign:'3 redesign revisions for each page ',
         colors:'colors and sizes',
-        ram:'1 GB RAM',
-        storage:'50 GB SSD Storage',
-        description: 'Expand your online presence with a comprehensive static website comprising 5-7 pages',
-        details: 'Deliver a seamless user experience with animated elements and elegant design.',
-        price: '3500',
+        ram:'2 GB RAM , 1 Gb/s Network ',
+        storage:'100 GB SSD Storage',
+        dataInsert : 'data-entry',
+        images: 'stock images ',
+        Bandwidth:'Unlimited Bandwidth',
+        License:'Windows License Included',
+        Descktob:'desktop application',
+        price: '13100',
         frequency: 'EGP'
     },
     {
@@ -57,4 +59,4 @@ const serviceData = [
    
 ];
 
-export default serviceData;
+export default LimitedData;

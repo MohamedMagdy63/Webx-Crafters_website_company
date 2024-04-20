@@ -53,9 +53,9 @@ const SlideShow = () => {
           onCanPlayThrough={handleCanPlayThrough}
         />
         <motion.div
-          className="absolute bg-black top-0 left-0 right-0 bottom-0 flex items-center justify-center"
+          className="absolute  top-0 left-0 right-0 bottom-0 flex items-center justify-center"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <motion.h2
