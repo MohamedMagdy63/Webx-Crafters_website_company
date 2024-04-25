@@ -1,35 +1,28 @@
 
-
-/* Color Variables */
 :root {
   --primary: #6a59ff;
   --white: #ffffff;
   --bg: #f5f5f5;
 }
-
 .page {
   zoom: 62.5%;
   scroll-behavior: smooth;
 }
-
 @media (min-width: 1440px) {
   .page {
     zoom: 1;
   }
 }
-
 @media (min-width: 2560px) {
   .page {
     zoom: 1.7;
   }
 }
-
 @media (min-width: 3860px) {
   .page {
     zoom: 2.5;
   }
 }
-
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 1rem;
@@ -107,39 +100,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.slider-controler .swiper-button-next {
-  left: 58% !important;
-  transform: translateX(-58%) !important;
-}
-
-@media (max-width: 990px) {
-  .slider-controler .swiper-button-next {
-    left: 70% !important;
-    transform: translateX(-70%) !important;
-  }
-}
-
-@media (max-width: 450px) {
-  .slider-controler .swiper-button-next {
-    left: 80% !important;
-    transform: translateX(-80%) !important;
-  }
-}
-
-@media (max-width: 990px) {
-  .slider-controler .swiper-button-prev {
-    left: 30% !important;
-    transform: translateX(-30%) !important;
-  }
-}
-
-@media (max-width: 450px) {
-  .slider-controler .swiper-button-prev {
-    left: 20% !important;
-    transform: translateX(-20%) !important;
-  }
 }
 
 /* Slider Arrow Styles */

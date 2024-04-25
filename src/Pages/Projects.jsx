@@ -1,20 +1,44 @@
 import React, { useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import InnerPages from "../Components/InnerPages";
 import Demos from "../Components/Demos";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-const Projects = () => {
+const Projects = ({ language, handleLanguage }) => {
+    const handleWhatsAppClick = () => {
+        // Assuming the client's phone number
+        const phoneNumber = '01117125043'; // Replace this with the actual phone number
+        const message = 'Hello, I want to chat with you!'; // Your predefined message
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        // Redirect to WhatsApp link
+        window.location.href = whatsappLink;
+      };
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <>
+        <div className="app">
             <Navbar />
-            <Demos/>
-            {/* <InnerPages/> */}
+            {/* Heading */}
+            <div className="container">
+                <div className="mt-10 p-2 text-3xl font-mainFont">We Developed, Created and Designed more than 100 project.</div>
+                <p className="p-5 text-[#4793AF] font-mainFont">Those are some of them take a tour now.</p>
+            </div>
+            <Demos />
+            {/* Ending */}
+            <div className="m-10">
+                <h1 className="text-2xl font-mainFont p-4">If you want to get yours contact us now</h1>
+                <button onClick={handleWhatsAppClick}>
+                    <FontAwesomeIcon icon={faWhatsapp} className="text-green-500 text-4xl p-4" /> 
+                </button>                                
+                <a href="mailto:webxcrafters@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faEnvelope} className="text-blue-400 text-4xl p-4" /> 
+                </a>  
+            </div>
             <Footer />
-        </>
+        </div>
     );
 };
 export default Projects;

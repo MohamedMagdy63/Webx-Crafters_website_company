@@ -7,10 +7,10 @@ import DemoImages from '../Data/Demos';
 
 SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
 
-const Demos = () => {
+const Demos = ({language}) => {
   return (
     <div className="page">
-      <div className="container ">
+      <div>
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
@@ -28,13 +28,12 @@ const Demos = () => {
           className="swiper_container"
         >
           {DemoImages.map((item, index) => (
-            
             <SwiperSlide key={index}>
               <a href={item.link} target='_blank' rel='noreferrer'>
                 <img src={item.project} className={`bg-[#2e8e9d] swiper-image`} alt="slide_image" />
-                <p className='absolute top-[80%] left-[40%] font-mono text-xl text-white hover:scale-[1.2] hover:text-gray-700'>{item.text}</p>
+                <p className={`absolute top-[80%] max-sm:left-[40%] left-[35%] font-mono text-xl text-white hover:scale-[1.2] hover:text-gray-700`}>{language === 'En' ? item.textEn :  item.textAr}</p>
               </a>
-              <p className='text-xl font-mono'>{item.desc}</p>
+              <p className='text-xl font-mono'>{language === 'En' ? item.descEn :  item.descAr}</p>
             </SwiperSlide>
           ))}
           <div className="slider-controler">

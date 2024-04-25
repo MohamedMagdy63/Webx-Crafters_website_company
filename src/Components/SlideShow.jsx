@@ -2,20 +2,24 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import Test from '../Videos/SlideShow/Astronout.mp4';
 
-const captions = [
+const captionsEnglish = [
   { text: 'We offer customized solutions to every customer' },
   { text: 'Imagination and creativity blended perfectly' },
   { text: 'Our designs are simple and original' }
 ];
+const captionsArabic = [
+  { text: 'نقدم ابتكارات مناسبة الي كل عميل ' },
+  { text: 'التخيل والأبداع يقدم في احسن صوره' },
+  { text: 'تصميمنا بسيط و مميز' }
+];
 
-const SlideShow = () => {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+const SlideShow = ({language}) => {
+  const [currentVideoIndex , setCurrentVideoIndex] = useState(0);
   const videoRef = useRef(null);
   const controls = useAnimation();
-
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % captions.length);
+      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % captionsEnglish.length);
     }, 6000); // 6 seconds interval
 
     return () => clearInterval(intervalId);
@@ -47,25 +51,25 @@ const SlideShow = () => {
           ref={videoRef}
           className="object-cover w-full h-full transition-opacity duration-1000"
           src={Test}
-          alt={`Video ${currentVideoIndex + 1}`}
+          alt={`Video animated`}
           muted
           onEnded={handleVideoEnd}
           onCanPlayThrough={handleCanPlayThrough}
         />
         <motion.div
-          className="absolute  top-0 left-0 right-0 bottom-0 flex items-center justify-center"
+          className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <motion.h2
-            className="text-xl font-semibold text-white"
+            className="lg:text-4xl text-2xl  font-semibold text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1 }}
           >
-            {captions[currentVideoIndex].text}
+            {language === 'En' ? captionsEnglish[currentVideoIndex].text : captionsArabic[currentVideoIndex].text }
           </motion.h2>
         </motion.div>
         <div className="absolute inset-0 flex items-center justify-center">

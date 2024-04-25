@@ -11,6 +11,11 @@ module.exports = {
     'src/Components/Footer.jsx',
     'src/Components/Services.jsx',
     'src/Pages/About.jsx',
+    'src/Pages/Projects.jsx',
+    'src/Pages/ServicesPage.jsx',
+    'src/Pages/Home.jsx',
+
+
   ],
   theme: {
     extend: {

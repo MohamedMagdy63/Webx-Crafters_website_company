@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Layout from '../Images/Icons/layers.png';
+import Layout from '../Images/Icons/ui-ux.png';
 import Responsive from '../Images/Icons/responsive.png';
 import TechnicalSupport from '../Images/Icons/technical-support.png';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import EnglishLanguage from "../Data/EnglishLanguage";
+import ArabicLanguage from "../Data/ArabicLanguage";
 
 
-const MainSlide = () => {
+const MainSlide = ({ language }) => {
   const container = useRef()
   const service = useRef([])
   const subdiv = (el)=>{
@@ -225,16 +227,16 @@ const MainSlide = () => {
       sm:w-[90%] sm:h-screen sm:flex sm:justify-start sm:items-start sm:z-10 sm:pt-10
       max-sm:w-full max-sm:h-[60vh] max-sm:flex max-sm:justify-center max-sm:items-center max-sm:z-10 '>
 
-        <div ref={textContainer} className='w-fit h-fit flex flex-col lg:justify-center lg:items-start lg:pl-[100px] sm:pl-0 sm:justify-start sm:items-start max-sm:pl-0 max-sm:justify-start max-sm:items-start '>
+        <div ref={textContainer} className='w-fit h-fit flex flex-col lg:justify-center lg:items-start lg:pl-[100px] sm:pl-0 sm:justify-start sm:items-start max-sm:pl-0 max-sm:justify-start max-sm:items-start max-sm:-mt-24'>
           <div ref={designDiv} className='w-full text-start h-1 overflow-hidden'>
-            <p ref={designEle} className='lg:text-7xl sm:text-5xl max-sm:text-5xl font-mainFont'>Design, <span ref={test} className='font-bold text-mainColor'>Develop</span></p>
+            <p ref={designEle} className='lg:text-7xl sm:text-5xl max-sm:text-5xl font-mainFont'>{language === 'En' ? EnglishLanguage.map((item)=>item.design) :  ArabicLanguage.map((item)=>item.design)}, <span ref={test} className='font-bold text-mainColor'>{language === 'En' ? EnglishLanguage.map((item)=>item.develop) :  ArabicLanguage.map((item)=>item.develop)}</span></p>
           </div>
           <div className='flex justify-center items-center gap-4 ml-14 '>
-            <p ref={textAnd} className='font-bold font-mono text-black lg:text-8xl sm:text-6xl max-sm:text-6xl scale-0'>&</p>
+            <p ref={textAnd} className='font-bold font-mono text-black lg:text-8xl sm:text-6xl max-sm:text-6xl scale-0'>{language === 'En' ? EnglishLanguage.map((item)=>item.and) :  ArabicLanguage.map((item)=>item.and)}</p>
             <p ref={Webpages} className={`font-bold font-mainFont lg:text-7xl sm:text-5xl max-sm:text-5xl relative `} 
-            style={{WebkitTextFillColor:"transparent", WebkitTextStroke:"2px black",WebkitBackgroundClip:"text",}}>Create Webpages</p>
+            style={{WebkitTextFillColor:"transparent", WebkitTextStroke:"2px black",WebkitBackgroundClip:"text"}}>{language === 'En' ? EnglishLanguage.map((item)=>item.create) :  ArabicLanguage.map((item)=>item.create)}</p>
           </div>
-          <p ref={textSplit} className='lg:text-7xl sm:text-5xl sm:mt-6 max-sm:mt-4 max-sm:text-4xl font-mainFont'>Software <span className='font-bold text-mainColor'>Systems</span></p>
+          <p ref={textSplit} className='lg:text-7xl sm:text-5xl sm:mt-6 max-sm:mt-4 max-sm:text-4xl font-mainFont'>{language === 'En' ? EnglishLanguage.map((item)=>item.software) :  ArabicLanguage.map((item)=>item.software)} <span className='font-bold text-mainColor'>{language === 'En' ? EnglishLanguage.map((item)=>item.system) :  ArabicLanguage.map((item)=>item.system)}</span></p>
         </div>
       </div>
       <div className='lg:w-[60%] lg:h-screen sm:w-full sm:h-[50%] max-sm:w-[100%] max-sm:h-[100%] z-20'>
@@ -245,24 +247,24 @@ const MainSlide = () => {
           className='object-cover lg:w-full lg:h-[90%] sm:w-[80%] max-sm:w-full max-sm:h-[350px]' />
         </div>
       </div>
-
       <div ref={container} className='absolute overflow-hidden bottom-0 w-full h-[100px] p-0  flex justify-evenly items-center'>
         <div ref={subdiv} className='flex justify-center items-center gap-4 w-[500px]'>
-          <img src={Layout} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-14 max-sm:h-14  p-1' alt="" />
-          <p className="text-sm lg:text-2xl  text-center max-sm:hidden">
-            Unique Layout design
+          <img src={Layout} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-16 max-sm:h-16 p-1' alt="" />
+          <p className="text-sm lg:text-2xl text-center max-sm:hidden capitalize">
+          {language === 'En' ? EnglishLanguage.map((item)=>item.uniqueDesign) :  ArabicLanguage.map((item)=>item.uniqueDesign)}
           </p>
         </div>
         <div ref={subdiv} className='flex justify-center items-center gap-4 w-[500px]'>
-          <img src={Responsive} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-14 max-sm:h-14 p-1' alt="" />
-          <p className="text-sm lg:text-2xl  text-center max-sm:hidden">
-            Beautiful all Device Responsive
+          <img src={Responsive} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-16 max-sm:h-16 p-1' alt="" />
+          <p className="text-sm lg:text-2xl text-center max-sm:hidden capitalize">
+            {language === 'En' ? EnglishLanguage.map((item)=>item.responsive) :  ArabicLanguage.map((item)=>item.responsive)}
+
           </p>
         </div>
         <div ref={subdiv} className='flex justify-center items-center gap-4 w-[500px]'>
-          <img src={TechnicalSupport} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-14 max-sm:h-14 p-1' alt="" />
+          <img src={TechnicalSupport} className='lg:w-16 lg:h-16 sm:w-16 sm:h-16 max-sm:w-16 max-sm:h-16 p-1' alt="" />
           <p className="text-sm lg:text-2xl text-center max-sm:hidden">
-            24/7 Hours Dedicated Support
+          {language === 'En' ? EnglishLanguage.map((item)=>item.support) :  ArabicLanguage.map((item)=>item.support)}
           </p>
         </div>
       </div>

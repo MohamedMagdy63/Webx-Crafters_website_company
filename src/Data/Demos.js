@@ -4,7 +4,6 @@ import Gosto from "../Images/Demos/Gosto.jpg";
 import Auction from "../Images/Demos/Auction.png";
 import Loukma from "../Images/Demos/Loukma.jpg";
 import Cyper from "../Images/Demos/Cyper.jpg";
-// import Portfolio from "../Images/Demos/Portfolio.png";
 import cartemplate from "../Images/Demos/car-template.jpg";
 import niketemplete from "../Images/Demos/nike-templete.png";
 
@@ -13,56 +12,65 @@ const DemoImages = [
       // Scrub
       project:H_Scrub,
       link:'https://scrub-shopping.vercel.app/',
-      desc:'E-commerce Website',
-      text:'Visit Now',
-      
+      descEn:'E-commerce Website',
+      descAr:'متجر الكتروني',
+      textEn:'Visit Now',
+      textAr:'رابط الموقع',
     },
     {
       project:relu,
       link:'https://relu-client.vercel.app/',
-      desc:'E-commerce Website',
-      text:'Visit Now',
+      descEn:'E-commerce Website',
+      descAr:'متجر الكتروني',
+      textEn:'Visit Now',
+      textAr:'رابط الموقع',
       
     },
     {
       project:Gosto,
-      desc:'E-commerce Website',
-      // text:'not available',
-      
+      descEn:'E-commerce Website',
+      descAr:'متجر الكتروني',
+      textEn:'not available',
+      textAr:'الرابط غير متاح',
     },
     {
       project:Auction,
-      desc:'E-commerce Website',
-      // text:'not available'
+      descEn:'E-commerce Website',
+      descAr:'متجر الكتروني',
+      textEn:'not available',
+      textAr:'الرابط غير متاح',
+
     },
     {
       project:Cyper,
-      desc:'Management system',
-      // text:'not available',
+      descEn:'Management system',
+      descAr:'نظام أداري',
+      textEn:'not available',
+      textAr:'الرابط غير متاح',
     },
     {
       project:Loukma,
-      desc:'Cashier system',
-      // text:'not available',
+      descEn:'Cashier system',
+      descAr:'نظام محاسبة كاشير',
+      textEn:'Not available',
+      textAr:'الرابط غير متاح',
+
     },
-    // {
-    //   project:Portfolio,
-    //   link:'https://magdy.vercel.app/',
-    //   desc:'Portfolio',
-    //   text:'Visit Now',
-    // },
     {
       project:cartemplate,
       link:'https://car-template-rho.vercel.app/',
-      desc:'E-commerce Website',
-      text:'Visit Now',
-      
+      descEn:'E-commerce Website',
+      descAr:'متجر الكتروني',
+      textEn:'Visit Now',
+      textAr:'رابط الموقع',
     },
     {
       project:niketemplete,
       link:'https://nike-templete.vercel.app/',
-      desc:'E-commerce Website',
-      text:'Visit Now',
+      descEn:'E-commerce Website',
+      descAr:'متجر الكتروني',
+      textEn:'Visit Now',
+      textAr:'رابط الموقع',
     },
     
    ];
