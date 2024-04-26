@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import Test from '../Videos/SlideShow/Astronout.mp4';
-
+// import Test from '../Images/About/mainSlide.jpg';
+import slide from '../Videos/SlideShow/Astronout.mp4'
 const captionsEnglish = [
   { text: 'We offer customized solutions to every customer' },
   { text: 'Imagination and creativity blended perfectly' },
@@ -40,17 +40,15 @@ const SlideShow = ({language}) => {
       transition: { duration: 2, ease: 'easeInOut' }, // Animation duration and easing
     });
   }, [currentVideoIndex, controls]);
-
   return (
-    <div className="relative p-5">
+    <div className="relative">
       <motion.div
-        className="w-[90%] h-[700px] max-sm:w-[100%] max-sm:h-[450px] lg:ml-[5%] mt-5 overflow-hidden rounded-full relative"
-        animate={controls}
+        className="w-full p-0 h-[700px] max-sm:w-[100%] max-sm:h-[450px]  mt-5 overflow-hidden relative"
       >
         <video
           ref={videoRef}
           className="object-cover w-full h-full transition-opacity duration-1000"
-          src={Test}
+          src={slide}
           alt={`Video animated`}
           muted
           onEnded={handleVideoEnd}
@@ -58,23 +56,15 @@ const SlideShow = ({language}) => {
         />
         <motion.div
           className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          
         >
           <motion.h2
             className="lg:text-4xl text-2xl  font-semibold text-white"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 1 }}
+           
           >
             {language === 'En' ? captionsEnglish[currentVideoIndex].text : captionsArabic[currentVideoIndex].text }
           </motion.h2>
         </motion.div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="video-animation"></div>
-        </div>
       </motion.div>
     </div>
   );

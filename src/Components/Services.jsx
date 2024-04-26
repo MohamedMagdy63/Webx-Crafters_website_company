@@ -101,7 +101,7 @@ const Services = ({ language }) => {
                     <div className={`relative overflow-hidden scale-95 rounded-lg shadow-lg m-3 border border-[#FFFAB7] transform transition duration-300`}>
                         <div className="relative bg-[#5BBCFF]">
                             <h2 className="text-2xl font-bold  font-mono text-[#FFFAB7] text-center p-2">{language === 'En' ? 'Super Ultra' :'الباقة المتكاملة'}</h2>
-                            <p className="text-white leading-relaxed">For Large Companies and Huge Systems</p>
+                            <p className="text-white leading-relaxed">{language === 'En' ? 'For Large Companies and Huge Systems' :'مناسب للشركات و الأنظمة الضخمة'}</p>
                         </div>
                         <div className="relative rounded-b-lg"> 
                             <ul className={`pl-20 p-2 ${language === 'En' ? 'text-left list-disc':  'text-right pr-10'}  text-sm font-sans text-[#124076] capitalize`}>
