@@ -18,8 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home language={language} handleLanguage={handleLanguage} />} /> 
         <Route path="/about" element={<About language={language} handleLanguage={handleLanguage}/>} />  
-        <Route path="/services" element={<ServicesPage />} /> 
-        <Route path="/projects" element={<Projects />} />  
+        <Route path="/services" element={<ServicesPage language={language} handleLanguage={handleLanguage}/>} /> 
+        <Route path="/projects" element={<Projects language={language} handleLanguage={handleLanguage}/>} />  
       </Routes>
     </BrowserRouter>
     </div>

@@ -28,14 +28,14 @@ const AnalysisBox = ({language}) => {
   };
   return (
     <div className="flex justify-center p-8 sm:p-20">
-      <motion.ul
+      <ul
         className="grid grid-cols-2 lg:grid-cols-4 max-sm:gap-2 gap-8 bg-gradient-to-b from-blue-300 via-blue-500 to-green-300 rounded-lg max-sm:p-4 p-8 shadow-lg"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.li
-          className="p-6 flex flex-col items-center justify-center bg-blue-200 rounded-md hover:bg-blue-300 transition"
+        <li
+          className="p-6 flex flex-col items-center justify-center bg-white rounded-md hover:bg-blue-200 transition"
           variants={itemVariants}
         >
           <motion.img
@@ -46,15 +46,15 @@ const AnalysisBox = ({language}) => {
             whileHover={{ rotateY: 20 }}
           />
           <span className="text-lg font-semibold text-blue-800">{language === 'En' ? EnglishLanguage.map((item)=>item.platforms) :  ArabicLanguage.map((item)=>item.platforms)}</span>
-          <motion.div
+          <div
             className="w-4 h-4 bg-blue-800 rounded-full mt-2"
             variants={objectVariants}
             initial="hidden"
             animate="visible"
           />
-        </motion.li>
-        <motion.li
-          className="p-6 flex flex-col items-center justify-center bg-blue-200 rounded-md hover:bg-blue-300 transition"
+        </li>
+        <li
+          className="p-6 flex flex-col items-center justify-center bg-white rounded-md hover:bg-blue-200 transition"
           variants={itemVariants}
         >
           <motion.img
@@ -65,15 +65,15 @@ const AnalysisBox = ({language}) => {
             whileHover={{ rotateY: 20 }}
           />
           <span className="text-lg font-semibold text-blue-800">{language === 'En' ? EnglishLanguage.map((item)=>item.commerce) :  ArabicLanguage.map((item)=>item.commerce)}</span>
-          <motion.div
+          <div
             className="w-4 h-4 bg-blue-800 rounded-full mt-2"
             variants={objectVariants}
             initial="hidden"
             animate="visible"
           />
-        </motion.li>
-        <motion.li
-          className="p-6 flex flex-col items-center justify-center bg-green-200 rounded-md hover:bg-green-300 transition"
+        </li>
+        <li
+          className="p-6 flex flex-col items-center justify-center bg-white rounded-md hover:bg-green-200 transition"
           variants={itemVariants}
         >
           <motion.img
@@ -84,15 +84,15 @@ const AnalysisBox = ({language}) => {
             whileHover={{ rotateY: 20 }}
           />
           <span className="text-lg font-semibold text-green-800">{language === 'En' ? EnglishLanguage.map((item)=>item.custom) :  ArabicLanguage.map((item)=>item.custom)}</span>
-          <motion.div
+          <div
             className="w-4 h-4 bg-green-800 rounded-full mt-2"
             variants={objectVariants}
             initial="hidden"
             animate="visible"
           />
-        </motion.li>
-        <motion.li
-          className="p-6 flex flex-col items-center justify-center bg-green-200 rounded-md hover:bg-green-300 transition"
+        </li>
+        <li
+          className="p-6 flex flex-col items-center justify-center bg-white rounded-md hover:bg-green-200 transition"
           variants={itemVariants}
         >
           <motion.img
@@ -103,14 +103,14 @@ const AnalysisBox = ({language}) => {
             whileHover={{ rotateY: 20 }}
           />
           <span className="text-lg font-semibold text-green-800">{language === 'En' ? EnglishLanguage.map((item)=>item.systemsAnalysis) :  ArabicLanguage.map((item)=>item.systemsAnalysis)}</span>
-          <motion.div
+          <div
             className="w-4 h-4 bg-green-800 rounded-full mt-2"
             variants={objectVariants}
             initial="hidden"
             animate="visible"
           />
-        </motion.li>
-      </motion.ul>
+        </li>
+      </ul>
     </div>
   );
 };

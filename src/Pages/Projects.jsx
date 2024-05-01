@@ -20,16 +20,16 @@ const Projects = ({ language, handleLanguage }) => {
     }, []);
     return (
         <div className="app">
-            <Navbar />
+            <Navbar language={language} handleLanguage={handleLanguage}/>
             {/* Heading */}
             <div className="container">
-                <div className="mt-10 p-2 text-3xl font-mainFont">We Developed, Created and Designed more than 100 project.</div>
-                <p className="p-5 text-[#4793AF] font-mainFont">Those are some of them take a tour now.</p>
+                <div className="mt-10 p-2 text-3xl font-mainFont">{language === 'En' ? 'We Developed, Created and Designed more than 100 project.':  '.لقد قمنا بتطوير وإنشاء وتصميم أكثر من 100 مشروع'}</div>
+                <p className="p-5 text-[#4793AF] font-mainFont">{language === 'En' ? 'Those are some of them take a tour now.': '. لك الأن بعض من مشارعينا اطلع عليها الأن'}</p>
             </div>
             <Demos />
             {/* Ending */}
             <div className="m-10">
-                <h1 className="text-2xl font-mainFont p-4">If you want to get yours contact us now</h1>
+                <h1 className="text-2xl font-mainFont p-4">{language === 'En' ? 'If you want to get yours contact us now': 'تواصل معنا الأن لأنشاء تصميمك الخاص'}</h1>
                 <button onClick={handleWhatsAppClick}>
                     <FontAwesomeIcon icon={faWhatsapp} className="text-green-500 text-4xl p-4" /> 
                 </button>                                
@@ -37,7 +37,7 @@ const Projects = ({ language, handleLanguage }) => {
                     <FontAwesomeIcon icon={faEnvelope} className="text-blue-400 text-4xl p-4" /> 
                 </a>  
             </div>
-            <Footer />
+            <Footer language={language}/>
         </div>
     );
 };
