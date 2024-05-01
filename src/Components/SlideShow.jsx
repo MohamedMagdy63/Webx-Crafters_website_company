@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-// import Test from '../Images/About/mainSlide.jpg';
-import slide from '../Videos/SlideShow/Astronout.mp4'
+import slide from '../Videos/SlideShow/Astronout.mp4';
+import Loader from './Loader'; // Import the Loader component
+
 const captionsEnglish = [
   { text: 'We offer customized solutions to every customer' },
   { text: 'Imagination and creativity blended perfectly' },
@@ -13,10 +13,42 @@ const captionsArabic = [
   { text: 'تصميمنا بسيط و مميز' }
 ];
 
-const SlideShow = ({language}) => {
-  const [currentVideoIndex , setCurrentVideoIndex] = useState(0);
+const SlideShow = ({ language }) => {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [showCaptionAnimation, setShowCaptionAnimation] = useState(false);
   const videoRef = useRef(null);
-  const controls = useAnimation();
+  const captionContainerRef = useRef(null);
+  const [loading, setLoading] = useState(true); // State for tracking video loading
+  const [videoLoaded, setVideoLoaded] = useState(false); // State for tracking video loaded status
+  
+  const handleLoadStart = () => {
+    setLoading(true); // Video loading has started
+  };
+  
+  const handleLoadedData = () => {
+    setLoading(false); // Video data has loaded (but not necessarily ready to play)
+  };
+  
+  const handleLoadedMetadata = () => {
+    setVideoLoaded(true); // Video is fully loaded and ready to play
+  };
+  
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (isElementInViewport(captionContainerRef.current)) {
+        setShowCaptionAnimation(true);
+      } else {
+        setShowCaptionAnimation(false);
+      }
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % captionsEnglish.length);
@@ -31,41 +63,51 @@ const SlideShow = ({language}) => {
   };
 
   const handleCanPlayThrough = () => {
+    setLoading(false); // Video is loaded, set loading to false
     videoRef.current.play();
   };
 
-  useEffect(() => {
-    controls.start({
-      scale: [0.95, 1.05, 1], // Keyframes for scale animation
-      transition: { duration: 2, ease: 'easeInOut' }, // Animation duration and easing
-    });
-  }, [currentVideoIndex, controls]);
+  const isElementInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
   return (
-    <div className="relative">
-      <motion.div
-        className="w-full p-0 h-[700px] max-sm:w-[100%] max-sm:h-[450px]  mt-5 overflow-hidden relative"
+    <div className="slideshow-container">
+      {loading && !videoLoaded && <Loader />} {/* Show loader while video is loading */}
+      <video
+        ref={videoRef}
+        className={`slideshow-video ${loading || !videoLoaded ? 'hidden' : ''}`}
+        src={slide}
+        alt={`Video animated`}
+        muted
+        onEnded={handleVideoEnd}
+        onCanPlayThrough={handleCanPlayThrough}
+        onLoadStart={handleLoadStart}
+        onLoadedData={handleLoadedData}
+        onLoadedMetadata={handleLoadedMetadata}
+        autoPlay
+        loop
+      />
+
+      <div
+        ref={captionContainerRef}
+        className={`caption-container `}
       >
-        <video
-          ref={videoRef}
-          className="object-cover w-full h-full transition-opacity duration-1000"
-          src={slide}
-          alt={`Video animated`}
-          muted
-          onEnded={handleVideoEnd}
-          onCanPlayThrough={handleCanPlayThrough}
-        />
-        <motion.div
-          className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center"
-          
-        >
-          <motion.h2
-            className="lg:text-4xl text-2xl  font-semibold text-white"
-           
-          >
-            {language === 'En' ? captionsEnglish[currentVideoIndex].text : captionsArabic[currentVideoIndex].text }
-          </motion.h2>
-        </motion.div>
-      </motion.div>
+        {
+        showCaptionAnimation ? 
+          <h2 className={`caption ${language === 'En' ? 'english' : 'arabic'}`}>
+            {language === 'En' ? captionsEnglish[currentVideoIndex].text : captionsArabic[currentVideoIndex].text}
+          </h2>
+        : ''
+        }
+        
+      </div>
     </div>
   );
 };
