@@ -11,19 +11,21 @@ const DemoImages = [
     {
       // Scrub
       project:H_Scrub,
-      link:'https://scrub-shopping.vercel.app/',
+      // link:'https://scrub-shopping.vercel.app/',
       descEn:'E-commerce Website',
       descAr:'متجر الكتروني',
       textEn:'Visit Now',
-      textAr:'رابط الموقع',
+      // textAr:'رابط الموقع',
+      textAr:'الرابط غير متاح',
     },
     {
       project:relu,
-      link:'https://relu-client.vercel.app/',
+      // link:'https://relu-client.vercel.app/',
       descEn:'E-commerce Website',
       descAr:'متجر الكتروني',
       textEn:'Visit Now',
-      textAr:'رابط الموقع',
+      // textAr:'رابط الموقع',
+      textAr:'الرابط غير متاح',
       
     },
     {
