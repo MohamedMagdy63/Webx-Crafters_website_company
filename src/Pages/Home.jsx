@@ -14,7 +14,7 @@ function Home({ language, handleLanguage }) {
   const captionContainerRef = useRef(null);
   const [showCaptionAnimation, setShowCaptionAnimation] = useState(false);
   useEffect(() => {
-    // window.scrollTo(0,0)
+    window.scrollTo(0,0)
     const scrollHandler = () => {
       if (isElementInViewport(captionContainerRef.current)) {
         setShowCaptionAnimation(true);
