@@ -5,8 +5,11 @@ import platform from "../Images/Icons/responsive-unscreen.gif";
 import dynamic from "../Images/Icons/web-design-unscreen.gif";
 import ArabicLanguage from "../Data/ArabicLanguage";
 import EnglishLanguage from "../Data/EnglishLanguage";
+import { useRef } from "react";
 
 const AnalysisBox = ({language}) => {
+  const servicesBoxRef = useRef()
+  
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: "spring" } },

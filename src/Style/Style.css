@@ -80,7 +80,7 @@
 
 /* Swiper Slide Image Styles */
 .swiper-slide img { 
-    border: 5px solid rgb(234, 227, 227);
+    border: 10px solid rgb(255, 255, 255);
     width: 37rem;
     height: 42rem;
     border-radius: 3rem;

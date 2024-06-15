@@ -81,3 +81,35 @@
     font-size: 2rem; /* Decrease font size for smaller screens */
   }
 }
+
+
+.demoTitle.english {
+  animation: demoAnimate 1s ease-in-out forwards;
+}
+
+.demoTitle.arabic {
+  animation: demoAnimate 1s ease-in-out forwards;
+}
+
+
+@keyframes demoAnimate {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
