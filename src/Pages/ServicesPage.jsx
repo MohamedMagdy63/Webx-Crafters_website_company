@@ -26,7 +26,7 @@ const ServicesPage = ({language , handleLanguage}) => {
             <div className="pt-24">
                 <div className=" p-2 text-3xl font-mainFont"> {language === 'En' ? 'Get your package now':  'أطلب الباقة المناسبة لك الأن'}</div>
             </div>
-            <Services/>
+            <Services language={language}/>
              {/* Ending */}
              <div className="m-10">
                 <h1 className="text-2xl font-mainFont p-4">{language === 'En' ?  'Contact us now to get a package that suits your needs': 'تواصل معنا الأن للحصول علي باقة تناسب احتياجاتك'}</h1>
