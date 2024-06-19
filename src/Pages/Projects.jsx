@@ -23,7 +23,7 @@ const Projects = ({ language, handleLanguage }) => {
             <Navbar language={language} handleLanguage={handleLanguage}/>
             {/* Heading */}
             <div className="container">
-                <div className="mt-10 p-2 text-3xl font-mainFont">{language === 'En' ? 'We Developed, Created and Designed more than 100 project.':  '.لقد قمنا بتطوير وإنشاء وتصميم أكثر من 100 مشروع'}</div>
+                <div className="mt-24 p-2 text-3xl font-mainFont">{language === 'En' ? 'We Developed, Created and Designed more than 100 project.':  '.لقد قمنا بتطوير وإنشاء وتصميم أكثر من 100 مشروع'}</div>
                 <p className="p-5 text-[#4793AF] font-mainFont">{language === 'En' ? 'Those are some of them take a tour now.': '. لك الأن بعض من مشارعينا اطلع عليها الأن'}</p>
             </div>
             <Demos language={language}/>
