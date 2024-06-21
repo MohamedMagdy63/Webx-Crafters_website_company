@@ -14,13 +14,11 @@ function Home({ language, handleLanguage }) {
   const captionContainerRef = useRef(null);
   const [showCaptionAnimation, setShowCaptionAnimation] = useState(false);
   useEffect(() => {
-    window.scrollTo(0,0)
+    // window.scrollTo(0,0)
     const scrollHandler = () => {
       if (isElementInViewport(captionContainerRef.current)) {
         setShowCaptionAnimation(true);
-      } else {
-        setShowCaptionAnimation(false);
-      }
+      } 
     };
     window.addEventListener('scroll', scrollHandler);
     return () => {
@@ -48,7 +46,7 @@ function Home({ language, handleLanguage }) {
         {
           showCaptionAnimation ? 
             <h1 
-              className={ `demoTitle ${language === 'En' ? 'english' : 'arabic'} text-center ${language === 'En' ? 'max-sm:text-left' :  'max-sm:text-right pr-4'} lg:text-4xl text-3xl pl-6 m-5 font-semibold text-[#116979]`}>
+              className={ `demoTitle ${language === 'En' ? 'english' : 'arabic'} text-center lg:text-4xl text-3xl max-sm:text-lg max-sm:pl-0 max-sm:m-0 pl-6 m-5 font-semibold text-[#116979]`}>
               {language === 'En' ? EnglishLanguage.map((item)=>item.demosTitle) :  ArabicLanguage.map((item)=>item.demosTitle)}
             </h1>
           : 
