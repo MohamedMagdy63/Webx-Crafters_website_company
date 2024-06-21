@@ -1,7 +1,6 @@
 
 import AnalysisBox from '../Components/AnalysisBox';
 import Demos from '../Components/Demos';
-import OurClients from '../Components/OurClients';
 import MainSlide from '../Components/MainSlide';
 import Navbar from '../Components/Navbar';
 import SlideShow from '../Components/SlideShow';
@@ -14,7 +13,7 @@ function Home({ language, handleLanguage }) {
   const captionContainerRef = useRef(null);
   const [showCaptionAnimation, setShowCaptionAnimation] = useState(false);
   useEffect(() => {
-    // window.scrollTo(0,0)
+    window.scrollTo(0,0)
     const scrollHandler = () => {
       if (isElementInViewport(captionContainerRef.current)) {
         setShowCaptionAnimation(true);
@@ -55,7 +54,6 @@ function Home({ language, handleLanguage }) {
       </div>
       <Demos language={language}/>
       <Services language={language}/>
-      <OurClients language={language}/>
       <Footer language={language}/>
     </div>
   );
