@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import slide from '../Videos/SlideShow/Astronout.mp4';
+// import slide from '../Videos/SlideShow/Astronout.mp4';
 
 const captionsEnglish = [
   { text: 'We offer customized solutions to every customer' },
@@ -12,17 +12,25 @@ const captionsArabic = [
   { text: 'تصميمنا بسيط و مميز' }
 ];
 const SlideShow = ({ language }) => {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  // const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [showCaptionAnimation, setShowCaptionAnimation] = useState(false);
-  const videoRef = useRef(null);
+  // const videoRef = useRef(null);
   const captionContainerRef = useRef(null);
-
+  useEffect(() => {
+    const starContainer = document.querySelector('.stars');
+    for (let i = 0; i < 200; i++) {  // Increased the number of stars
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = Math.random() * 2 + 2 + 's';  // Randomize the twinkling duration
+      starContainer.appendChild(star);
+    }
+  }, []);
   useEffect(() => {
     const scrollHandler = () => {
       if (isElementInViewport(captionContainerRef.current)) {
         setShowCaptionAnimation(true);
-      } else {
-        setShowCaptionAnimation(false);
       }
     };
     window.addEventListener('scroll', scrollHandler);
@@ -31,19 +39,19 @@ const SlideShow = ({ language }) => {
     };
   }, []);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % captionsEnglish.length);
-    }, 6000); // 6 seconds interval
-    return () => clearInterval(intervalId);
-  }, []);
-  const handleVideoEnd = () => {
-    videoRef.current.currentTime = 0;
-    videoRef.current.play();
-  };
-  const handleCanPlayThrough = () => {
-    videoRef.current.play();
-  };
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % captionsEnglish.length);
+  //   }, 6000); // 6 seconds interval
+  //   return () => clearInterval(intervalId);
+  // }, []);
+  // const handleVideoEnd = () => {
+  //   videoRef.current.currentTime = 0;
+  //   videoRef.current.play();
+  // };
+  // const handleCanPlayThrough = () => {
+  //   videoRef.current.play();
+  // };
 
   const isElementInViewport = (element) => {
     const rect = element.getBoundingClientRect();
@@ -54,9 +62,10 @@ const SlideShow = ({ language }) => {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   };
+  
   return (
     <div className="slideshow-container">
-      <video
+      {/* <video
         ref={videoRef}
         className='slideshow-video'
         src={slide}
@@ -65,17 +74,26 @@ const SlideShow = ({ language }) => {
         onEnded={handleVideoEnd}
         onCanPlayThrough={handleCanPlayThrough}
         loop
-      />
-      <div className='absolute top-0 left-0 bg-black w-full h-full opacity-25'></div>
+      /> */}
+      <div className='absolute top-0 left-0 bg-black w-full h-full' ></div>
+      <div className='stars'></div>
       <div
         ref={captionContainerRef}
         className={`caption-container `}
       >
         {
           showCaptionAnimation ? 
+            <>
             <h2 className={`caption ${language === 'En' ? 'english' : 'arabic'}`}>
-              {language === 'En' ? captionsEnglish[currentVideoIndex].text : captionsArabic[currentVideoIndex].text}
+              {language === 'En' ? captionsEnglish[0].text : captionsArabic[0].text}
             </h2>
+            <h2 className={`caption ${language === 'En' ? 'english' : 'arabic'}`}>
+              {language === 'En' ? captionsEnglish[1].text : captionsArabic[1].text}
+            </h2>
+            <h2 className={`caption ${language === 'En' ? 'english' : 'arabic'}`}>
+              {language === 'En' ? captionsEnglish[2].text : captionsArabic[2].text}
+            </h2>
+            </>
           : 
           ''
         }
