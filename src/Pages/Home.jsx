@@ -6,9 +6,10 @@ import Navbar from '../Components/Navbar';
 import SlideShow from '../Components/SlideShow';
 import { useEffect, useRef, useState } from 'react';
 import Footer from '../Components/Footer';
-import Services from '../Components/Services';
+// import Services from '../Components/Services';
 import EnglishLanguage from '../Data/EnglishLanguage';
 import ArabicLanguage from '../Data/ArabicLanguage';
+import OurClients from '../Components/OurClients';
 function Home({ language, handleLanguage }) {
   const captionContainerRef = useRef(null);
   const [showCaptionAnimation, setShowCaptionAnimation] = useState(false);
@@ -53,7 +54,8 @@ function Home({ language, handleLanguage }) {
         }
       </div>
       <Demos language={language}/>
-      <Services language={language}/>
+      {/* <Services language={language}/> */}
+      <OurClients language={language} />
       <Footer language={language}/>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import Services from "../Components/Services";
+// import Services from "../Components/Services";
 
 import ServicesData from "../Data/Services";
 import Ending from "../Components/Ending";
@@ -36,11 +36,11 @@ const ServicesPage = ({language , handleLanguage}) => {
                 </div>
             </div>
 
-            <div>
+            {/* <div>
                 <div className=" p-2 text-3xl font-mainFont"> {language === 'En' ? 'Get your package now':  'أطلب الباقة المناسبة لك الأن'}</div>
-            </div>
-            <Services language={language}/>
-            <Ending language={language} textAr={  'تواصل معنا الأن للحصول علي باقة تناسب احتياجاتك'} textEn={  'Contact us now to get a package that suits your needs'}/>
+            </div> */}
+            {/* <Services language={language}/> */}
+            <Ending language={language} textAr={  'تواصل معنا الأن للحصول علي عرض يناسب احتياجاتك'} textEn={  'Contact us now to get an offer that suits your needs'}/>
             <Footer language={language}/>
         </div>
     );
